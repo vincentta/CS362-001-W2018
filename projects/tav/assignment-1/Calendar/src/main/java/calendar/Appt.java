@@ -84,7 +84,7 @@ public class Appt implements  Comparable<Appt>{
      * @param title The title or caption to give the appointment
      * @param description The appointment's details
      */
-    public Appt(int startHour, int startMinute, 
+    public Appt(int startHour, int startMinute,
             int startDay, int startMonth, int startYear,String title, String description)
     {
         //Sets all instance variables 
@@ -112,16 +112,16 @@ public class Appt implements  Comparable<Appt>{
     private void isValid() {
     	int NumDaysInMonth= CalendarUtil.NumDaysInMonth(startYear,startMonth-1);
     				
-    	if(startHour<0 || startHour>23)
+    	if(startHour<0 || startHour>22)
     		this.valid=false;
     	else
-        	if(startMinute<0 || startMinute>59)
+        	if(startMinute<0 || startMinute>58)
         		this.valid=false;
         	else
-            	if(startDay<1 || startDay>NumDaysInMonth)
+            	if(startDay<0 || startDay>NumDaysInMonth)
             		this.valid=false;
             	else
-                	if(startMonth<1 || startMonth>12)
+                	if(startMonth<1 || startMonth>11)
                 		this.valid=false;
                 	else
                 		this.valid=true;
