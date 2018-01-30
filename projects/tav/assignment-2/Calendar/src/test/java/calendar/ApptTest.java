@@ -119,17 +119,25 @@ public class ApptTest {
 				title,
 				description);
 		// Set variables
-		appt.setStartHour(30);
+		appt.setStartDay(40);
 		assertEquals(false, appt.getValid());
-		appt.setStartHour(21);
+		appt.setStartDay(-2);
+		assertEquals(false, appt.getValid());
+		appt.setStartDay(15);
 
 		appt.setStartMinute(63);
 		assertEquals(false, appt.getValid());
+		appt.setStartMinute(-2);
+		assertEquals(false, appt.getValid());
 		appt.setStartMinute(30);
 
-		appt.setStartDay(40);
+		appt.setStartHour(30);
 		assertEquals(false, appt.getValid());
-		appt.setStartDay(15);
+		appt.setStartHour(-2);
+		assertEquals(false, appt.getValid());
+		appt.setStartHour(21);
+
+
 	}
 
 	@Test

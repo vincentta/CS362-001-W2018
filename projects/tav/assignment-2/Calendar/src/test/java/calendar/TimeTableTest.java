@@ -17,18 +17,332 @@ public class TimeTableTest {
 
 	 @Test
 	  public void test01()  throws Throwable  {
-		/* int thisYear=2018;
+		 GregorianCalendar today = new GregorianCalendar(2018,10,13);
+		 GregorianCalendar tomorrow = new GregorianCalendar(2018,10,24);
 
-		 GregorianCalendar today = new GregorianCalendar(thisYear,thisMonth,thisDay);
-		 GregorianCalendar tomorrow = (GregorianCalendar)today.clone();
-		 tomorrow.add(Calendar.DAY_OF_MONTH,1);
-		 String todatDate=today.get(Calendar.MONTH)+ "/"+ today.get(Calendar.DAY_OF_MONTH)+"/"+today.get(Calendar.YEAR);
-		 String tomorrowDate=tomorrow.get(Calendar.MONTH)+ "/"+ tomorrow.get(Calendar.DAY_OF_MONTH)+"/"+tomorrow.get(Calendar.YEAR);*/
+		 int startHour=21;
+		 int startMinute=30;
+		 int startDay=15;
+		 int startMonth=01;
+		 int startYear=2018;
+		 String title="Birthday Party";
+		 String description="This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt appt = new Appt(startHour,
+				 startMinute,
+				 startDay,
+				 startMonth,
+				 startYear,
+				 title,
+				 description);
+
+		 int[] recurDays = new int[]{};
+		 appt.setRecurrence(recurDays, 1, 1, 1);
+
+		 int startHourB=5;
+		 int startMinuteB=30;
+		 int startDayB=15;
+		 int startMonthB=01;
+		 int startYearB=2018;
+		 String titleB="Birthday Party";
+		 String descriptionB="This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt apptB = new Appt(startHourB,
+				 startMinuteB,
+				 startDayB,
+				 startMonthB,
+				 startYearB,
+				 titleB,
+				 descriptionB);
+		 int[] recurDaysB = new int[]{};
+		 apptB.setRecurrence(recurDaysB, 2, 1, appt.RECUR_NUMBER_FOREVER);
+
+		 int startHourC=12;
+		 int startMinuteC=30;
+		 int startDayC=15;
+		 int startMonthC=01;
+		 int startYearC=2018;
+		 String titleC="Birthday Party";
+		 String descriptionC="This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt apptC = new Appt(startHourC,
+				 startMinuteC,
+				 startDayC,
+				 startMonthC,
+				 startYearC,
+				 titleC,
+				 descriptionC);
+
+		 int[] recurDaysC = new int[]{3};
+		 apptC.setRecurrence(recurDaysC, 3, 1, 1);
+
+
+		 int startHourD=12;
+		 int startMinuteD=30;
+		 int startDayD=15;
+		 int startMonthD=01;
+		 int startYearD=2018;
+		 String titleD="Birthday Party";
+		 String descriptionD="This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt apptD = new Appt(startHourD,
+				 startMinuteD,
+				 startDayD,
+				 startMonthD,
+				 startYearD,
+				 titleD,
+				 descriptionD);
+
+		 int[] recurDaysD = new int[]{3};
+		 apptC.setRecurrence(recurDaysD, 1, 1, 1);
+		 TimeTable timeTable = new TimeTable();
+
+		 LinkedList<Appt> apptList=new LinkedList<>();
+		 LinkedList<CalDay> calDays=new LinkedList<>();
+
+		 CalDay calDay = new CalDay(today);
+		 CalDay calDay2 = new CalDay(tomorrow);
+
+		 apptList.add(appt);
+		 apptList.add(apptB);
+		 apptList.add(apptC);
+		 apptList.add(apptD);
+
+		 calDay.addAppt(appt);
+		 calDay.addAppt(apptB);
+		 calDay.addAppt(apptC);
+
+		 calDay2.addAppt(appt);
+		 calDay2.addAppt(apptB);
+		 calDay2.addAppt(apptC);
+
+		 calDays=timeTable.getApptRange(apptList, today, tomorrow);
+
+		 LinkedList<Appt> apptNullList = null;
+		 assertEquals(null, timeTable.deleteAppt(apptNullList, appt));
+		 assertEquals(null, timeTable.deleteAppt(apptList, appt));
+		 assertEquals(null, timeTable.deleteAppt(apptList, null));
+
+
+
+
 
 	 }
+
 	 @Test
 	  public void test02()  throws Throwable  {
-		 
+		 GregorianCalendar today = new GregorianCalendar(2018,10,13);
+		 GregorianCalendar tomorrow = new GregorianCalendar(2018,10,14);
+
+		 int startHour=21;
+		 int startMinute=30;
+		 int startDay=15;
+		 int startMonth=01;
+		 int startYear=2018;
+		 String title="Birthday Party";
+		 String description="This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt appt = new Appt(startHour,
+				 startMinute,
+				 startDay,
+				 startMonth,
+				 startYear,
+				 title,
+				 description);
+
+		 int[] recurDays = new int[]{3};
+		 appt.setRecurrence(recurDays, 1, 1, 1);
+
+		 int startHourB=5;
+		 int startMinuteB=30;
+		 int startDayB=15;
+		 int startMonthB=01;
+		 int startYearB=2018;
+		 String titleB="Birthday Party";
+		 String descriptionB="This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt apptB = new Appt(startHourB,
+				 startMinuteB,
+				 startDayB,
+				 startMonthB,
+				 startYearB,
+				 titleB,
+				 descriptionB);
+		 int[] recurDaysB = new int[]{3};
+		 apptB.setRecurrence(recurDaysB, 2, 1, 1);
+
+		 int startHourC=12;
+		 int startMinuteC=30;
+		 int startDayC=15;
+		 int startMonthC=01;
+		 int startYearC=2018;
+		 String titleC="Birthday Party";
+		 String descriptionC="This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt apptC = new Appt(startHourC,
+				 startMinuteC,
+				 startDayC,
+				 startMonthC,
+				 startYearC,
+				 titleC,
+				 descriptionC);
+
+		 int[] recurDaysC = new int[]{3};
+		 apptC.setRecurrence(recurDaysC, 3, 1, 1);
+
+
+		 int startHourD=12;
+		 int startMinuteD=30;
+		 int startDayD=15;
+		 int startMonthD=01;
+		 int startYearD=2018;
+		 String titleD="Birthday Party";
+		 String descriptionD="This is my birthday party.";
+		 //Construct a new Appointment object with the initial data
+		 Appt apptD = new Appt(startHourD,
+				 startMinuteD,
+				 startDayD,
+				 startMonthD,
+				 startYearD,
+				 titleD,
+				 descriptionD);
+
+		 int[] recurDaysD = new int[]{3};
+		 apptC.setRecurrence(recurDaysD, 1, 1, 1);
+		 TimeTable timeTable = new TimeTable();
+
+		 LinkedList<Appt> apptList=new LinkedList<>();
+		 LinkedList<CalDay> calDays=new LinkedList<>();
+
+		 CalDay calDay = new CalDay(today);
+		 CalDay calDay2 = new CalDay(tomorrow);
+
+		 apptList.add(appt);
+		 apptList.add(apptB);
+		 apptList.add(apptC);
+		 //apptList.add(apptD);
+
+		 calDay.addAppt(appt);
+		 calDay.addAppt(apptB);
+		 calDay.addAppt(apptC);
+
+		 calDay2.addAppt(appt);
+		 calDay2.addAppt(apptB);
+		 calDay2.addAppt(apptC);
+
+		 int[] pv = {0,1,2};
+		 timeTable.permute(apptList, pv);
 	 }
+
+	@Test
+	public void test03()  throws Throwable  {
+		GregorianCalendar today = new GregorianCalendar(2018,10,13);
+		GregorianCalendar tomorrow = new GregorianCalendar(2018,10,24);
+
+		int startHour=21;
+		int startMinute=30;
+		int startDay=15;
+		int startMonth=01;
+		int startYear=2018;
+		String title="Birthday Party";
+		String description="This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt appt = new Appt(startHour,
+				startMinute,
+				startDay,
+				startMonth,
+				startYear,
+				title,
+				description);
+
+		int[] recurDays = new int[]{};
+		appt.setRecurrence(recurDays, 1, 1, 1);
+
+		int startHourB=5;
+		int startMinuteB=30;
+		int startDayB=15;
+		int startMonthB=01;
+		int startYearB=2018;
+		String titleB="Birthday Party";
+		String descriptionB="This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt apptB = new Appt(startHourB,
+				startMinuteB,
+				startDayB,
+				startMonthB,
+				startYearB,
+				titleB,
+				descriptionB);
+		int[] recurDaysB = new int[]{};
+		apptB.setRecurrence(recurDaysB, 2, 1, appt.RECUR_NUMBER_FOREVER);
+
+		int startHourC=12;
+		int startMinuteC=30;
+		int startDayC=15;
+		int startMonthC=01;
+		int startYearC=2018;
+		String titleC="Birthday Party";
+		String descriptionC="This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt apptC = new Appt(startHourC,
+				startMinuteC,
+				startDayC,
+				startMonthC,
+				startYearC,
+				titleC,
+				descriptionC);
+
+		int[] recurDaysC = new int[]{};
+		apptC.setRecurrence(recurDaysC, 3, 1, 1);
+
+
+		int startHourD=12;
+		int startMinuteD=30;
+		int startDayD=15;
+		int startMonthD=01;
+		int startYearD=2018;
+		String titleD="Birthday Party";
+		String descriptionD="This is my birthday party.";
+		//Construct a new Appointment object with the initial data
+		Appt apptD = new Appt(startHourD,
+				startMinuteD,
+				startDayD,
+				startMonthD,
+				startYearD,
+				titleD,
+				descriptionD);
+
+		int[] recurDaysD = new int[]{};
+		apptC.setRecurrence(recurDaysD, 1, 1, 1);
+		TimeTable timeTable = new TimeTable();
+
+		LinkedList<Appt> apptList=new LinkedList<>();
+		LinkedList<CalDay> calDays=new LinkedList<>();
+
+		CalDay calDay = new CalDay(today);
+		CalDay calDay2 = new CalDay(tomorrow);
+
+		apptList.add(appt);
+		apptList.add(apptB);
+		apptList.add(apptC);
+		apptList.add(apptD);
+
+		calDay.addAppt(appt);
+		calDay.addAppt(apptB);
+		calDay.addAppt(apptC);
+
+		calDay2.addAppt(appt);
+		calDay2.addAppt(apptB);
+		calDay2.addAppt(apptC);
+
+		calDays=timeTable.getApptRange(apptList, today, tomorrow);
+
+		LinkedList<Appt> apptNullList = null;
+		assertEquals(null, timeTable.deleteAppt(apptNullList, appt));
+		assertEquals(null, timeTable.deleteAppt(apptList, appt));
+		assertEquals(null, timeTable.deleteAppt(apptList, null));
+
+
+	}
 //add more unit tests as you needed
 }
