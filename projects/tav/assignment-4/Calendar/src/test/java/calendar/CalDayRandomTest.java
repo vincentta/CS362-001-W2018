@@ -52,9 +52,9 @@ public class CalDayRandomTest {
 	/**
 	 * Generate Random Tests that tests Appt Class.
 	 */
-	/*
+
 	@Test
-	public void radnomtest()  throws Throwable {
+	public void randomtestCalDay()  throws Throwable {
 
 			long startTime = Calendar.getInstance().getTimeInMillis();
 			long elapsed = Calendar.getInstance().getTimeInMillis() - startTime;
@@ -122,7 +122,5 @@ public class CalDayRandomTest {
 			System.out.println("Done testing...");
 		}
 
-
-*/
 	
 }
