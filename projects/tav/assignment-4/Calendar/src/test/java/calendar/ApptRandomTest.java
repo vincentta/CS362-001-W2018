@@ -50,6 +50,8 @@ public class ApptRandomTest {
    /**
      * Generate Random Tests that tests Appt Class.
      */
+
+   /*
 	 @Test
 	  public void radnomtest()  throws Throwable  {
 
@@ -107,7 +109,7 @@ public class ApptRandomTest {
 		}
 	 
 		 System.out.println("Done testing...");
-	 }
+	 }*/
 
 
 	

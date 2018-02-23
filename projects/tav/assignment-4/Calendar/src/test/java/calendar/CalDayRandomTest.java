@@ -52,6 +52,7 @@ public class CalDayRandomTest {
 	/**
 	 * Generate Random Tests that tests Appt Class.
 	 */
+	/*
 	@Test
 	public void radnomtest()  throws Throwable {
 
@@ -122,6 +123,6 @@ public class CalDayRandomTest {
 		}
 
 
-
+*/
 	
 }
